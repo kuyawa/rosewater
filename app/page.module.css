@@ -1,0 +1,66 @@
+.page { display: block; width: 100%; /*border: 1px solid pink;*/ }
+.appname { font-size: 300%; }
+.login { margin-top: 10px; text-align: right; }
+.hero { display: block; height: 600px; background: url(/media/herox.png) top right no-repeat; }
+.hero h1 { padding-top: 180px; font-size: 2.5em; }
+.hero h2 { padding-top: 20px; font-size: 2em; }
+.pics { display: flex; flex-direction: row; justify-content: space-between; width: 630px; }
+.pics img { border-radius: 20px; width: 200px; }
+.panel { display: block; margin: 50px 0; }
+.cards { display: flex; flex-direction: row;  }
+.card { display: flex; flex-direction: column; width: 250px; margin: 10px; }
+.card:first-child { margin-left: 0; }
+.card:last-child { margin-right: 0; }
+.card img { width: 250px; }
+.card h1  { font-size: 120%; font-weight: bold; }
+.card p   { margin: 0 0 10px; font-size: 90%; }
+.card goal { font-weight: bold; /*color: #b56576;*/ }
+.card fund { margin-bottom: 10px; font-size: 90%; }
+.message { display: block; margin-top: 1rem; width: 100%; color: #333; text-align: center; }
+
+
+
+.start {
+  display: inline-block;
+  margin: 40px 0 20px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #25c;
+  border: 1px solid #25c;
+  border-radius: 25px;
+  text-decoration: none;
+  cursor: pointer; 
+}
+
+.funding {
+  width: 100%;
+  align-items: center;
+}
+
+.funding h1 {
+  margin-top: 1rem;
+  font-weight: normal;
+  font-size: 1em;
+  text-align: center;
+}
+
+.fundButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.fundButtons button {
+  width: 100%;
+}
+
+.fundButtons button small {
+  font-size: xx-small;
+}
+
+.title { margin: 50px 0; text-align: center; }
+
+.submit { display: block; width: 300px; margin: 2rem auto 0; cursor: pointer; }
+.submit[disabled] { background-color: #ddd; border-color: #ccc; color: #666; pointer-events: none; }

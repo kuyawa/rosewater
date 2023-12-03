@@ -1,0 +1,46 @@
+.view {
+  display: block;
+  width: 720px;
+  margin: 4rem auto 1rem;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.hbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 400px;
+  margin: 4rem auto 2rem;
+}
+
+.textLabel {
+  display: block;
+  color: #369;
+  font-size: small;
+}
+
+.textValue {
+  display: block;
+  font-size: 1.2em;
+}
+
+.areaLabel {
+  display: block;
+  color: #369;
+  font-size: small;
+}
+
+.areaValue {
+  display: block;
+  font-size: 1.2em;
+}
