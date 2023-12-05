@@ -79,10 +79,7 @@ export default function Start() {
       if(data?.image?.size<1){ setMessage('Image is required'); return }
       setDisabled(true)
       setButton('WAIT')
-      const resp = await fetch('/api/dream', {
-        method: 'POST',
-        body: form,
-      })
+      const resp = await fetch('/api/dreams', {method: 'POST', body: form})
       const info = await resp.json()
       //const info = {success:true}
       console.log('INFO', info)
