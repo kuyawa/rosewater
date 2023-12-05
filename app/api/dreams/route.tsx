@@ -68,13 +68,13 @@ export async function POST(request: NextRequest) {
     const form = await request.formData()
 
     let rec:Dictionary = {}
-    let file:File = new File([], 'test.txt')
-    form.forEach((val, key) => {
+    let file:File = new File([''], 'test.txt')
+    form.forEach((val:any, key:string) => {
       console.log('-', key, val)
       if(key=='image') { 
         file = val as File
         console.log('File', file)
-        rec[key] = file?.name || ''
+        rec[key] = file?.name || 'file.jpg'
       } else { 
         rec[key] = val
       }
