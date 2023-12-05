@@ -67,6 +67,13 @@ export async function getDreams() {
   return rows
 }
 
+export async function getMainDreams(location:string) {
+  const res1 = await sql`SELECT * FROM dreams ORDER BY created DESC`
+  const res2 = await sql`SELECT *, (funds/goal) as percent FROM dreams ORDER BY percent DESC`
+  const res3 = await sql`SELECT * FROM dreams WHERE country = ${location}`
+  return {latest:res1.rows, funded:res2.rows, located:res3.rows}
+}
+
 export async function getDreamById(id:string) {
   const { rows } = await sql`SELECT * FROM dreams WHERE id=${id}`
   return rows.length > 0 ? rows[0] : null
@@ -93,9 +100,8 @@ export async function newDream(data:Dictionary) {
     const res = await sql`
       INSERT INTO dreams(owner, contract, name, descrip, goal, funds, country, image, metadata)
       VALUES (${data?.owner}, ${data?.contract}, ${data?.name}, ${data?.descrip}, ${data?.goal || 0}, ${data?.funds || 0}, ${data?.country}, ${data?.image}, ${data?.metadata})
-      RETURNING _id
+      RETURNING id
     `
-    console.log('RES', res)
     return res
   } catch(ex:any) {
     console.error(ex)
@@ -141,10 +147,12 @@ export async function newDonation(data:Dictionary) {
   console.log('DATA', data)
   try {
     const res = await sql`
-      INSERT INTO donations(dreamid,donor,amount,usdval,txid,status)
-      VALUES(${data?.dreamid},${data?.donor},${data?.amount},${data?.usdval},${data?.txid},${data?.status} )
-    )`
+      INSERT INTO donations(dreamid,donor,amount,usdval,txid,status) 
+      VALUES(${data.dreamid}, ${data.donor}, ${data.amount}, ${data.usdval}, ${data.txid}, ${data.status})
+      RETURNING id
+    `
     console.log('RES', res)
+    // id = res.rows[0].id
     return res
   } catch(ex:any) {
     console.error(ex)

@@ -128,7 +128,7 @@ main {
   /*min-height: 100vh;*/
   /*border: 1px solid green;*/
 }
-header { width: 100%; display: flex; flex-direction: column; justify-content: center; }
+header { width: 100%; display: flex; flex-direction: column; justify-content: center; padding-top: 30px; }
 footer { margin: 100px 0 40px; text-align: center; }
 footer li { list-style: none; margin: 10px 0; }
 h1, h2, h3, h4, h5 { font-weight: normal; }

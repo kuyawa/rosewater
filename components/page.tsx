@@ -1,4 +1,7 @@
 import { ReactNode } from 'react';
+import Header from '@/components/header'
+import Footer from '@/components/footer'
+import '@/app/globals.css'
 import styles from '@/app/page.module.css'
 
 interface PageProps {
@@ -8,9 +11,13 @@ interface PageProps {
 
 const Page = ({ className, children }: PageProps) => {
   return (
-    <div className={styles.page + ' ' + className||''}>
-      {children}
-    </div>
+    <main>
+      <Header />
+        <div className={styles.page + ' ' + className||''}>
+          {children}
+        </div>
+      <Footer />
+    </main>
   )
 }
 

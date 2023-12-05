@@ -1,14 +1,16 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+//import { Poppins } from 'next/font/google'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const font = Inter({ subsets: ['latin'] })
+//const font = Poppins({ subsets: ['latin'], display:'swap', weight: '400', style: ['normal', 'italic'] })
 
 export const metadata: Metadata = {
   title: 'Rosewater',
-  description: 'Help dreams come true',
+  description: 'Make dreams come true',
 }
 
 export default function RootLayout({
@@ -18,12 +20,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <main>
-          <Header />
-            {children}
-          <Footer />
-        </main>
+      <body className={font.className}>
+        {children}
       </body>
     </html>
   )

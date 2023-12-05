@@ -1,8 +1,28 @@
+.wrap {
+  width: 1330px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.wrapc {
+  width: 1330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
 .page { display: block; width: 100%; /*border: 1px solid pink;*/ }
 .appname { font-size: 300%; }
 .login { margin-top: 10px; text-align: right; }
-.hero { display: block; height: 600px; background: url(/media/herox.png) top right no-repeat; }
-.hero h1 { padding-top: 180px; font-size: 2.5em; }
+.hero { display: flex; flex-direction: row; justify-content: space-between; width: 100%; height: 800px; background: url(/media/backg.png) top center no-repeat; }
+.heroLeft  { }
+.heroRight { }
+.hero h1 { padding-top: 200px; font-size: 2.5em; }
 .hero h2 { padding-top: 20px; font-size: 2em; }
 .pics { display: flex; flex-direction: row; justify-content: space-between; width: 630px; }
 .pics img { border-radius: 20px; width: 200px; }
@@ -13,7 +33,7 @@
 .card:last-child { margin-right: 0; }
 .card img { width: 250px; }
 .card h1  { font-size: 120%; font-weight: bold; }
-.card p   { margin: 0 0 10px; font-size: 90%; }
+.card p   { height: 1rem; max-height: 1rem; margin: 0 0 10px; font-size: 90%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .card goal { font-weight: bold; /*color: #b56576;*/ }
 .card fund { margin-bottom: 10px; font-size: 90%; }
 .message { display: block; margin-top: 1rem; width: 100%; color: #333; text-align: center; }
@@ -22,12 +42,13 @@
 
 .start {
   display: inline-block;
-  margin: 40px 0 20px;
-  padding: 10px 20px;
-  background-color: transparent;
-  color: #25c;
-  border: 1px solid #25c;
-  border-radius: 25px;
+  margin: 40px 0 10px;
+  padding: 20px 30px;
+  background-color: #DC4492;
+  color: #FFF !important;
+  border: 1px solid #FFF;
+  border-radius: 200px;
+  font-size: 1.4rem;
   text-decoration: none;
   cursor: pointer; 
 }
@@ -64,3 +85,18 @@
 
 .submit { display: block; width: 300px; margin: 2rem auto 0; cursor: pointer; }
 .submit[disabled] { background-color: #ddd; border-color: #ccc; color: #666; pointer-events: none; }
+
+.donors {
+  width: 100%;
+  margin-top: 4px;
+  border-collapse: collapse;
+}
+
+.donors th {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.donors td {
+  padding: 2px 10px;
+}
