@@ -62,32 +62,22 @@ export async function GET(request: NextRequest) {
   return Response.json(list)
 }
 
-interface File extends Blob {
-  readonly lastModified: number;
-  /** @deprecated */
-  readonly lastModifiedDate: Date;
-  readonly name: string;
-  readonly webkitRelativePath: string;
-}
-
-declare var File: {
-  prototype: File;
-  new (parts: (ArrayBuffer | ArrayBufferView | Blob | string)[], filename: string, properties?: FilePropertyBag): File;
-}
-
 export async function POST(request: NextRequest) {
   try {
     console.log('FORM')
     const form = await request.formData()
 
     let rec:Dictionary = {}
+    //let file:File = {} as File
     let file:File = new File([''], 'test.txt')
+    console.log('FILE1')
     form.forEach((val:any, key:string) => {
       console.log('-', key, val)
       if(key=='image') { 
         file = val as File
         console.log('File', file)
         rec[key] = file?.name || 'file.jpg'
+        console.log('FILE2')
       } else { 
         rec[key] = val
       }
