@@ -1,4 +1,5 @@
 //import Image from 'next/image'
+import { revalidatePath } from 'next/cache'
 import Image from 'next/image'
 import Index from '@/components/index'
 import ButtonFund from '@/components/button-fund'
@@ -6,7 +7,10 @@ import DreamCard from '@/components/dream-card'
 import * as db from '@/utils/db'
 import styles from './page.module.css'
 
+
 export default async function Home() {
+  revalidatePath('/')
+
   async function getDreams(){
     const location = 'USA' // TODO: get from user IP?
     const dreams = await db.getMainDreams(location)
