@@ -1,5 +1,6 @@
 import { NextRequest } from 'next/server'
 import { ContractFactory, JsonRpcProvider, Wallet } from 'ethers'
+import { File } from '@web-std/file'
 //import { put } from '@vercel/blob'
 import * as db from '@/utils/db'
 import { randomNumber } from '@/utils/random'
