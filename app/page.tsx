@@ -35,8 +35,8 @@ export default async function Home() {
       </div>
 
       <div className={styles.wrapc}>
+        <h1 className={styles.caption}>Recent dreams</h1>
         <div className={styles.panel}>
-          <h1>Recent dreams</h1>
           <div className={styles.cards}>
             {data?.latest?.length > 0
               ? data.latest.map(dream=>{
@@ -47,8 +47,8 @@ export default async function Home() {
           </div>
         </div>
 
+        <h1 className={styles.caption}>Most funded</h1>
         <div className={styles.panel}>
-          <h1>Most funded</h1>
           <div className={styles.cards}>
             {data?.funded?.length > 0
               ? data.funded.map(dream=>{
@@ -59,8 +59,8 @@ export default async function Home() {
           </div>
         </div>
 
+        <h1 className={styles.caption}>In your region</h1>
         <div className={styles.panel}>
-          <h1>In your region</h1>
           <div className={styles.cards}>
             {data?.located?.length > 0
               ? data.located.map(dream=>{

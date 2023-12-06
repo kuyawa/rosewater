@@ -26,7 +26,8 @@
 .hero h2 { padding-top: 20px; font-size: 2em; }
 .pics { display: flex; flex-direction: row; justify-content: space-between; width: 630px; }
 .pics img { border-radius: 20px; width: 200px; }
-.panel { display: block; margin: 50px 0; }
+.caption {margin-top: 50px; }
+.panel { display: block; width: 1330px; max-width: 1330px; margin: 0; overflow-x: scroll; }
 .cards { display: flex; flex-direction: row;  }
 .card { display: flex; flex-direction: column; width: 250px; margin: 10px; }
 .card:first-child { margin-left: 0; }

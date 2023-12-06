@@ -18,7 +18,7 @@ const Index = ({ className, children }: IndexProps) => {
       <div className={styles.page}>
         {children}
       </div>
-      <div className={styles.wrapc}>
+      <div className={styles.page}>
         <Footer />
       </div>
     </div>

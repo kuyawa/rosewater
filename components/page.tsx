@@ -11,13 +11,17 @@ interface PageProps {
 
 const Page = ({ className, children }: PageProps) => {
   return (
-    <main>
-      <Header />
-        <div className={styles.page + ' ' + className||''}>
-          {children}
-        </div>
-      <Footer />
-    </main>
+    <div>
+      <div className={styles.wrap}>
+        <Header />
+      </div>
+      <div className={styles.page}>
+        {children}
+      </div>
+      <div className={styles.page}>
+        <Footer />
+      </div>
+    </div>
   )
 }
 
