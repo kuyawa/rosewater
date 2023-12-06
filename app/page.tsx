@@ -26,7 +26,7 @@ export default async function Home() {
         <div className={styles.wrap}>
           <div className={styles.heroLeft}>
             <h1>Do you have a dream?</h1>
-            <h3>Let the world make your ideas come true</h3>
+            <h3>Let the whole world kickstart your ideas</h3>
             <a className={styles.start} href="/start">START YOUR DREAM FOR FREE</a>
             <h2>Are you a dream maker?</h2>
             <h3>Help people around the world reach their goals</h3>
