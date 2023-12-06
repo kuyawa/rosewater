@@ -1,5 +1,5 @@
 'use client'
- 
+import { useRouter } from 'next/navigation' 
 import { ethers } from 'ethers'
 import { useState } from 'react'
 import * as api from '@/utils/api'
@@ -9,6 +9,7 @@ import styles from '@/app/page.module.css'
 declare let window: any;
 
 export default function ButtonFund(props:any) {
+  const router = useRouter()
   const cause = props?.cause || ''
   const [message, setMessage] = useState('FUND A DREAM')
   
@@ -69,6 +70,7 @@ export default function ButtonFund(props:any) {
       // Add funds to dream
       const funded = await db.addFunds(dream.id, usd)
       console.log('Funded', funded)
+      router.refresh()
     } catch(ex) {
       console.error(ex)
       setMessage('ERROR FUNDING')

@@ -136,6 +136,7 @@ a { color: #333; text-decoration: none; }
 a:visited { color: #333; }
 a:hover {  }
 button { padding: 10px; background-color: transparent; color: #24c; border: 1px solid #24c; border-radius: 5px; cursor: pointer; }
+button:nth-child(2) { margin: 0 2px; }
 form { display: block; width: 720px; margin: 1rem auto; padding: 2rem; border: 1px solid #ccc; border-radius: 20px;  }
 form label { display: block; margin-top: 1rem; color: #888; font-size: normal; }
 form label.info { display: block; margin-top: 0; color: #888; font-size: small; }

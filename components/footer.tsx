@@ -13,7 +13,7 @@ export default function Footer() {
       </div>
       <div className={styles.footInfo}>
         <p>Rosewater is developed on XRPL-EVM Sidechain</p>
-        <p>You will need Metamask or any EVM compatible wallet and have some funds in it to interact with the app</p>
+        <p>You will need Metamask or any EVM compatible wallet and have some funds to interact with the app</p>
         <p>Download Metamask at <Link href="https://metamask.io">https://metamask.io</Link></p>
       </div>
       <div className={styles.footHelp}>

@@ -19,12 +19,12 @@ export default function Donations(props:Dictionary) {
         {list.map((item:Dictionary)=>{
           total += Number(item.usdval)
           return (
-            <tr key={item.id}><td>{item.created.substr(0,10)}</td><td>{item.donor.substr(0,12)+'...'}</td><td>{item.usdval}</td></tr>
+            <tr key={item.id}><td>{item.created.substr(0,10)}</td><td>{item.donor.substr(0,12)+'...'}</td><td>{money(item.usdval,2)}</td></tr>
           )
         })}
         </tbody>
         <tfoot>
-          <tr><th>{list.length} Donation{list.length==1?'':'s'}</th><th>&nbsp;</th><th>{total}</th></tr>
+          <tr><th>{list.length} Donation{list.length==1?'':'s'}</th><th>&nbsp;</th><th>{money(total,2)}</th></tr>
         </tfoot>
       </table>
     </>

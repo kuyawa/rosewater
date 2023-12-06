@@ -1,4 +1,4 @@
-/* PALETTE 2B3582 861BB0 BE1677 DC4492 */
+/* PALETTE blue:2B3582 violet:861BB0 pink:BE1677 pink:DC4492 */
 
 .wrap {
   width: 1330px;
@@ -36,7 +36,7 @@
 .hero { display: flex; flex-direction: row; justify-content: space-between; width: 100%; height: 800px; background: url(/media/backg.png) top center no-repeat; }
 .heroLeft  { }
 .heroRight { }
-.hero h1 { padding-top: 200px; font-size: 2.5em; }
+.hero h1 { padding-top: 160px; font-size: 2.5em; }
 .hero h2 { padding-top: 20px; font-size: 2em; }
 .pics { display: flex; flex-direction: row; justify-content: space-between; width: 630px; }
 .pics img { border-radius: 20px; width: 200px; }
@@ -59,7 +59,7 @@
 
 .start {
   display: inline-block;
-  margin: 40px 0 10px;
+  margin: 40px 0 100px;
   padding: 20px 30px;
   background-color: #DC4492;
   color: #FFF !important;
@@ -126,3 +126,33 @@
 .donors td:nth-child(3) {
   text-align: right;
 }
+
+.bullet {
+  margin: 20px 0 0 -6px;
+  list-style-type: none;
+  font-size: 1.4em;
+}
+
+.bullet li {
+  margin-top: 10px;
+  padding-left: 2em;
+  background: url(/media/bullet.svg) no-repeat top left 5px;
+}
+
+/*
+.bullet {
+  margin-top: 50px;
+  list-style-image: url(/media/bullet.svg);
+  font-size: 1.2em;
+  line-height: 1.8em;
+  vertical-align: middle;
+}
+
+.bullet li {
+  line-height: 1.8em;
+}
+
+.bullet li::marker {
+  font-size: 4em;
+}
+*/

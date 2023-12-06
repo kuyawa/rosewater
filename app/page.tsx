@@ -31,9 +31,14 @@ export default async function Home() {
             <h2>Are you a dream maker?</h2>
             <h3>Help people around the world reach their goals</h3>
             <h3>Donate to causes next to your heart or town</h3>
+            <ul className={styles.bullet}>
+              <li>Select a project</li>
+              <li>Use your crypto wallet</li>
+              <li>Make people happy</li>
+            </ul>
           </div>
           <div className={styles.heroRight}>
-            <Image src="/media/hero.png" alt="hero" width={600} height={600} />
+            <Image src="/media/hero.png" alt="hero" width={680} height={680} />
           </div>
         </div>
       </div>
