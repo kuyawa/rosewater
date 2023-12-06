@@ -1,5 +1,8 @@
 "use client"
 import { useState, useEffect } from 'react'
+import ReactDOM from "react-dom"
+import QRCode from "react-qr-code"
+import Link from 'next/link'
 import Image from 'next/image'
 import Page from '@/components/page'
 import ViewArea from '@/components/view-area'
@@ -69,6 +72,13 @@ export default function View(props:any) {
           <div className={styles.fund}>{percent}% funded since {since}</div>
           <br/>
           <ButtonFund cause={dream.contract} />
+          <p><small>If you want to donate a different amount, scan the qrcode<br/>Use only XRPL-EVM network</small></p>
+          <div className={styles.qrcode}>
+            <QRCode value={dream.contract} />
+          </div>
+          <div className={styles.contract}>
+            <Link href={`https://evm-sidechain.xrpl.org/address/${dream.contract}`}>{dream.contract}</Link>
+          </div>
         </div>
         <div className={common.cbar}>
           <Donations data={donations} />
