@@ -1,10 +1,11 @@
 "use client"
 import { useState, useEffect } from 'react'
-//import * as db from '@/utils/db'
+import Image from 'next/image'
 import Page from '@/components/page'
 import ViewArea from '@/components/view-area'
 import ViewText from '@/components/view-text'
 import ButtonFund from '@/components/button-fund'
+import Donations from '@/components/donations'
 import * as db from '@/utils/dbclient'
 import money from '@/utils/money'
 import styles from '@/app/page.module.css'
@@ -49,13 +50,13 @@ export default function View(props:any) {
 
   useEffect(() => {
     getDream(id)
-  }, [])
+  }, [id])
 
 
   return (
     <Page>
       <div className={common.view}>
-        <img src={imageSource} alt="Dream Image" width={650} height={425} />
+        <Image src={imageSource} alt="Dream Image" width={650} height={425} />
         <div className={common.hbar}>
           <span>by {user.name} </span>
           <span>Country {dream.country} </span>
@@ -65,24 +66,12 @@ export default function View(props:any) {
         <div className={common.cbar}>
           <ViewText label="Funding goal in USD" value={money(dream.goal)}/>
           <progress value={percent} max="100" />
-          <div className={styles.fund}>{percent}% funded - since {since}</div>
+          <div className={styles.fund}>{percent}% funded since {since}</div>
           <br/>
           <ButtonFund cause={dream.contract} />
         </div>
         <div className={common.cbar}>
-          <h3>Latest Donors</h3>
-          <table className={styles.donors}>
-            <thead>
-              <tr><th>Date</th><th>Donor</th><th>USD</th></tr>
-            </thead>
-            <tbody>
-            {donations.map(data=>{
-              return (
-                <tr key={data.id}><td>{data.created.substr(0,10)}</td><td>{data.donor.substr(0,20)+'...'}</td><td>{data.usdval}</td></tr>
-              )
-            })}
-            </tbody>
-          </table>
+          <Donations data={donations} />
         </div>
       </div>
     </Page>

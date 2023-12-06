@@ -1,3 +1,5 @@
+/* PALETTE 2B3582 861BB0 BE1677 DC4492 */
+
 .wrap {
   width: 1330px;
   display: flex;
@@ -14,6 +16,18 @@
   justify-content: space-between;
   margin: 0 auto;
   padding: 1rem;
+}
+
+.footInfo {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #646;
+}
+
+.footHelp {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #646;
 }
 
 .page { display: block; width: 100%; /*border: 1px solid pink;*/ }
@@ -94,10 +108,19 @@
 }
 
 .donors th {
+  padding: 2px 10px;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
 
 .donors td {
   padding: 2px 10px;
+}
+
+.donors th:nth-child(3) {
+  text-align: right;
+}
+
+.donors td:nth-child(3) {
+  text-align: right;
 }

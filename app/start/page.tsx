@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect, FormEvent } from 'react'
 import { BrowserProvider } from 'ethers'
+import Image from 'next/image'
 import Page from '@/components/page'
 import InputArea from '@/components/input-area'
 import InputText from '@/components/input-text'
@@ -114,7 +115,7 @@ export default function Start() {
         <InputArea name="desc" label="Describe your dream" info="Expand on your ideas and goals, how you will invest the money" />
         <InputText name="goal" label="Funding goal in USD" info="Amount of money you need to start your dream" />
         <label>Upload an image for your dream <small>(Max size 1000x1000 pixels)</small></label>
-        <img src={imageSource} alt="Dream Image" width={650} height={425} />
+        <Image src={imageSource} alt="Dream Image" width={650} height={425} />
         <input type="file" name="image" onChange={imageView} />
         <button className={styles.submit} type="submit" disabled={disabled}>{button}</button>
         <div className={styles.message}>{message}</div>

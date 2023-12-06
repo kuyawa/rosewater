@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import ButtonFund from '@/components/button-fund'
 import money from '@/utils/money'
 import styles from '@/app/page.module.css'
@@ -18,12 +19,12 @@ export default function DreamCard(info:Dictionary) {
 
   return (
     <div className={styles.card}>
-      <a href={url}><img src={image} alt="image" width={250} height={220} /></a>
+      <a href={url}><Image src={image} alt="image" width={250} height={220} /></a>
       <h1>{dream?.name}</h1>
       <p>{dream?.descrip}</p>
       <div className={styles.goal}>Dream goal {money(dream?.goal)}</div>
       <progress value={percent} max="100" />
-      <div className={styles.fund}>{funded}% funded - since {since}</div>
+      <div className={styles.fund}>{funded}% funded since {since}</div>
       <ButtonFund cause={dream?.contract} />
     </div>
   )
