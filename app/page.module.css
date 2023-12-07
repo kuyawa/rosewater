@@ -1,4 +1,7 @@
 /* PALETTE blue:2B3582 violet:861BB0 pink:BE1677 pink:DC4492 */
+header.headMain { 
+  text-align: center;
+}
 
 .wrap {
   width: 1330px;
@@ -156,3 +159,16 @@
   font-size: 4em;
 }
 */
+
+
+@media (max-width: 768px){
+  .wrap, .wrapc, .panel { width: 100%; }
+  .donors { font-size: 80%; }
+  .hero { height: auto; background: url(/media/backg.png) bottom center no-repeat; }
+  .hero .wrap { flex-direction: column-reverse; justify-content: space-between; width: 100%; height: auto; }
+  .heroLeft { text-align: center; }
+  .heroLeft h1 { padding-top: 50px; }
+  .heroLeft ul { text-align: left; margin-left: 10%; }
+  .heroRight img { width: 100%; max-width: 100%; height: auto; padding: 20px; }
+  .start { font-size: 100%; margin-bottom: 40px; }
+}

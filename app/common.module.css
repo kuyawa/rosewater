@@ -44,3 +44,11 @@
   display: block;
   font-size: 1.2em;
 }
+
+
+
+@media (max-width: 768px){
+  .view { width: 100%; border: none; }
+  .viewImage { width: 100%; max-width: 100%; height: auto; }
+  .cbar { width: 100%; }
+}

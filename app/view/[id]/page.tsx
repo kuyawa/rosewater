@@ -59,7 +59,7 @@ export default function View(props:any) {
   return (
     <Page>
       <div className={common.view}>
-        <Image src={imageSource} alt="Dream Image" width={650} height={425} />
+        <Image className={common.viewImage} src={imageSource} alt="Dream Image" width={650} height={425} />
         <div className={common.hbar}>
           <span>by {user.name} </span>
           <span>Country {dream.country} </span>
