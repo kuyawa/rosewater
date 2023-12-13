@@ -29,14 +29,15 @@ export default function View(props:any) {
   async function getDream(id:string){
     //const res1  = await fetch('/api/dreams?id='+id) || {}
     //const dream = await res1.json() || {name:'Dream', descrip:'Not found', goal:'0', country:'N/A', image:''}
-    const dream = await db.getDreamById(id)
+    //const dream = await db.getDreamById(id)
+    const dream = await db.getDreamByContract(id)
     //console.log('DREAM', dream)
     //const res2  = await fetch('/api/users?address='+dream?.owner) || {}
     //const user  = await res2.json() || {name:'Anonymous'}
     const user = await db.getUserByAddress(dream?.owner)
     //console.log('OWNER', dream?.owner)
     //console.log('USER', user)
-    const donors = await db.getDonationsByDream(id)
+    const donors = await db.getDonationsByDream(dream?.id)
     //console.log('DONORS', donors)
     //const image = dream?.image ? '/api/image?url='+dream?.image : noImage
     const image = dream?.image ?? noImage

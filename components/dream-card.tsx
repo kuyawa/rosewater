@@ -10,7 +10,7 @@ type Dictionary = { [key:string]:any }
 export default function DreamCard(info:Dictionary) {
   //console.log('DREAM', info)
   const dream = info.data
-  const url = '/view/'+dream.id
+  const url = '/view/'+dream.contract
   //const image = dream?.image ? '/api/image?url='+dream.image : '/media/noimage.png'
   const image = dream?.image ?? '/media/noimage.png'
   const percent = dream?.funds / dream?.goal * 100
